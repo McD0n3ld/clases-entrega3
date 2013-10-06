@@ -44,10 +44,15 @@ public class TCPSocketsServidor {
 		return line;
 	}
 
+	public void writeLine(String line) {
+		out.println(line);
+		return;
+	}
+	
 	public void enviarFecha() {
 		Date dt = new Date();
 		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-		out.println(format.format(dt));
+		writeLine(format.format(dt));
 	}
 
 	public void enviarFecha(int opcion) {
@@ -56,7 +61,7 @@ public class TCPSocketsServidor {
 		else {
 			Date dt = new Date();
 			SimpleDateFormat format = new SimpleDateFormat("EEEE, dd MMMM yyyy, HH:mm:ss");
-			out.println(format.format(dt));
+			writeLine(format.format(dt));
 		}
 	}
 

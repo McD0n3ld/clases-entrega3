@@ -41,6 +41,16 @@ public class TCPSocketsCliente {
 		}
 		return;
 	}
+	
+	public void writeLine(String line) {
+		try {
+			out.write(line+"\n");
+			out.flush();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return;
+	}
 
 	public void close() {
 		try {

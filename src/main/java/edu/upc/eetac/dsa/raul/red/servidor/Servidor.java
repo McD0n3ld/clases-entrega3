@@ -7,6 +7,7 @@ public class Servidor
     	System.out.println("Servidor iniciado");
     	QueHoraEsProtocolServidor p = new QueHoraEsProtocolServidor(50894);
     	QueHoraEsProtocolServidorConcurrente pt = new QueHoraEsProtocolServidorConcurrente(50894);
+    	ChinosConcurrente cc = new ChinosConcurrente(50894);
     	
 //    	while(p.nextStep() == 0) {
 //    		//nothing
@@ -16,7 +17,11 @@ public class Servidor
 //    		//nothing
 //    	}
     	
-    	while(pt.nextStep() == 0) {
+//    	while(pt.nextStep() == 0) {
+//    		//nothing
+//    	}
+    	
+    	while(cc.nextStep() == 0) {
     		//nothing
     	}
     	
