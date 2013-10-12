@@ -32,7 +32,7 @@
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
-							<mainClass>edu.upc.eetac.dsa.raul.red.servidor.Servidor</mainClass>
+							<!-- <mainClass>edu.upc.eetac.dsa.raul.red.servidor.Servidor</mainClass>-->
 							<classpathPrefix>dependency-jars/</classpathPrefix>
 						</manifest>
 					</archive>
