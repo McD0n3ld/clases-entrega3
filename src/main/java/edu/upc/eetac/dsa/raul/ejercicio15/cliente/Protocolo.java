@@ -17,6 +17,7 @@ public class Protocolo {
 	String apuesta = "";
 
 	String line = "";
+	int intentos = 0;
 
 	public Protocolo(String ip, int port) {
 		this.ip = ip;
@@ -28,7 +29,12 @@ public class Protocolo {
 		case 1:
 			System.out.println("Abriendo conexion con el server");
 			s = new TCPSocketsCliente(ip, port);
-			estado = 2;
+			if (s.ready)
+				estado = 2;
+			else
+				intentos++;
+			if (intentos > 3)
+				estado = 98;
 			break;
 
 		case 2:
@@ -72,13 +78,16 @@ public class Protocolo {
 			System.out.println(s.readLine());
 			estado = 99;
 			break;
+			
+		case 98:
+			System.out.println("Cerrando cliente");
+			return -1;
 
 		case 99:
 			System.out.println("Cerrando socket");
 			s.close();
 			estado = 1;
 			return -1;
-			// break;
 
 		default:
 			System.out.println("Wrong state\nReiniciando protocolo");

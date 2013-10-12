@@ -16,6 +16,16 @@ public class TCPSocketsServidor {
 	PrintWriter out = null;
 	BufferedReader in = null;
 
+	public TCPSocketsServidor(Socket cliente) {
+		this.cliente = cliente;
+		try {
+			out = new PrintWriter(cliente.getOutputStream(), true);
+			in = new BufferedReader(new InputStreamReader(cliente.getInputStream()));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public TCPSocketsServidor(int port) {
 		try {
 			socket = new ServerSocket(port);
@@ -82,6 +92,15 @@ public class TCPSocketsServidor {
 			System.out.println("Problemas al cerrar el socket servidor");
 		}
 		return;
+	}
+	
+	public void setSocket(Socket c) {
+		cliente = c;
+		return;
+	}
+	
+	public Socket getSocket() {
+		return cliente;
 	}
 
 }

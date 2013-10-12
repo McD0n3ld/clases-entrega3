@@ -14,6 +14,8 @@ public class JuegoChinosClientProtocol {
 	
 	String nombre = "";
 	String apuesta = "";
+	
+	String line = "";
 
 	public JuegoChinosClientProtocol(String ip, int port) {
 		this.ip = ip;
@@ -23,7 +25,7 @@ public class JuegoChinosClientProtocol {
 	public int nextStep() {
 		switch (estado) {
 		case 1:
-			System.out.println("Abriendo socket con el cliente");
+			System.out.println("Abriendo socket con el server");
 			s = new TCPSocketsCliente(ip, port);
 			estado = 2;
 			break;
@@ -37,24 +39,27 @@ public class JuegoChinosClientProtocol {
 
 		case 3:
 			System.out.println("Recibiendo respuesta");
-			String line = s.readLine();
-			if (line == "WAIT")
+			line = s.readLine();
+			System.out.println(line);
+			if (line.equals("WAIT"))
 				estado = 4;
 			else {
-				System.out.println(line);
 				estado = 5;
 			}
 			break;
 
 		case 4:
 			System.out.println("Hemos recibido WAIT. Esperando...");
-			if (s.readLine() == "YOUR BET")
+			line = s.readLine();
+			System.out.println(line);
+			if (line.equals("YOUR BET"))
 				estado = 5;
 			else
 				estado = 4;
 			break;
 			
 		case 5:
+			System.out.println("Hemos recibido YOUR BET. Esperando...");
 			System.out.println("Cual es tu apuesta. [JUEGAS] [TOTALES]");
 			apuesta = leerLinea();
 			s.writeLine(apuesta);

@@ -31,20 +31,20 @@ public class TCPSocketsCliente {
 		}
 		return line;
 	}
-	
+
 	public void writeLine(int line) {
 		try {
-			out.write(line+"\n");
+			out.write(line + "\n");
 			out.flush();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return;
 	}
-	
+
 	public void writeLine(String line) {
 		try {
-			out.write(line+"\n");
+			out.write(line + "\n");
 			out.flush();
 		} catch (Exception e) {
 			e.printStackTrace();
