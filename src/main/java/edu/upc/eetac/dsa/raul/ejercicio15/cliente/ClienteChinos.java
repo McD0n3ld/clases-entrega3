@@ -1,7 +1,7 @@
 package edu.upc.eetac.dsa.raul.ejercicio15.cliente;
 
-public class Cliente {
-	public static void main(String[] args) {
+public class ClienteChinos {
+	public static void start() {
 		System.out.println("Cliente iniciado");
 		Protocolo jccp = new Protocolo("localhost", 50894);
 

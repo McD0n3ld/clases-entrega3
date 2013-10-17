@@ -1,7 +1,7 @@
 package edu.upc.eetac.dsa.raul.ejercicio12.cliente;
 
 public class ClienteUDP {
-	public static void main(String[] args) {
+	public static void start() {
 		System.out.println("Cliente iniciado");
 		QueHoraEsProtocolCliente p = new QueHoraEsProtocolCliente("localhost", 50894);
 

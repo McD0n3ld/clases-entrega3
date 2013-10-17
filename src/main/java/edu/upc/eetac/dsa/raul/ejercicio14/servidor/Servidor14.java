@@ -1,7 +1,7 @@
 package edu.upc.eetac.dsa.raul.ejercicio14.servidor;
 
-public class Servidor {
-	public static void main(String[] args) {
+public class Servidor14 {
+	public static void start() {
 		System.out.println("Servidor iniciado");
 		QueHoraEsProtocolServidorConcurrente pt = new QueHoraEsProtocolServidorConcurrente(50894);
 

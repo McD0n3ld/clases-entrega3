@@ -1,7 +1,7 @@
 package edu.upc.eetac.dsa.raul.ejercicio12.servidor;
 
 public class ServidorTCP {
-	public static void main(String[] args) {
+	public static void start() {
 		System.out.println("Servidor iniciado");
 		QueHoraEsProtocolServidor p = new QueHoraEsProtocolServidor(50894);
 

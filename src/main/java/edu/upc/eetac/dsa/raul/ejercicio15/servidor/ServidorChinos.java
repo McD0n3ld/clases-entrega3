@@ -1,7 +1,7 @@
 package edu.upc.eetac.dsa.raul.ejercicio15.servidor;
 
-public class Servidor {
-	public static void main(String[] args) {
+public class ServidorChinos {
+	public static void start() {
 		System.out.println("Servidor iniciado");
 		ChinosConcurrente cc = new ChinosConcurrente(50894);
 
