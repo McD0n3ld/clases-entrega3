@@ -13,7 +13,7 @@ public class LinkerClientes extends Thread {
 		Jugador j1;
 		Jugador j2;
 		while (true) {
-			System.out.println("Tamaño: " + ChinosConcurrente.list.size());
+			//System.out.println("Tamaño: " + ChinosConcurrente.list.size());
 			i = 0;
 			j = 0;
 			encontrado = false;
@@ -57,12 +57,12 @@ public class LinkerClientes extends Thread {
 				} // else if (j1.estado == 0/2/3) <-- no haremos nada
 				i++;
 			}
-			try {
+			/*try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
+			}*/
 		}
 	}
 
